@@ -11,8 +11,9 @@ window.requestAnimationFrame(gameLoop);
 
 const player = new Player(
     canvas.context,
+    // { name: 'rect', size: { width: 12, height: 32 } },
+    { name: 'circle', radius: 64 },
     { x: 20, y: 20 },
-    { width: 12, height: 12 },
     32,
     {
         v: 'down',
@@ -23,14 +24,14 @@ const player = new Player(
 
 function gameLoop() {
     canvas.context.clearRect(0, 0, canvas.size.width, canvas.size.height);
-    player.teleport(canvas.mousePosition);
+    // player.teleport(canvas.mousePosition);
 
-    // player.dvd_movement({
-    //     left: 0,
-    //     right: canvas.size.width,
-    //     up: 0,
-    //     down: canvas.size.height,
-    // });
+    player.dvd_movement({
+        left: 0,
+        right: canvas.size.width,
+        up: 0,
+        down: canvas.size.height,
+    });
 
     player.draw();
     if (gameLoopActive) window.requestAnimationFrame(gameLoop);

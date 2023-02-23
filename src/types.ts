@@ -21,3 +21,15 @@ export type Bounds = {
 };
 
 export type Color = 'red' | 'green' | 'blue' | 'pink' | 'black';
+
+export type CircleShape = {
+    name: 'circle';
+    radius: number;
+};
+
+export type RectShape = {
+    name: 'rect';
+    size: RectSize;
+};
+
+export type Shapes = CircleShape | RectShape;
